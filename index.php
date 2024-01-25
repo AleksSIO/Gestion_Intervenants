@@ -190,7 +190,7 @@ switch ($page) {
 <?php if (isset($_GET['page']) && $_GET['page'] == "inscription") { ?>
 <div class="footer-basic fixed-bottom" style="background-color: #171933;">
 <?php } else { ?>
-<div class="footer-basic" style="background-color: #171933;">
+<div class="footer-basic fixed-bottom" style="background-color: #171933;">
 <?php } ?>
     <footer>
         <ul class="list-inline">
