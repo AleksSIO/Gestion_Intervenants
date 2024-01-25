@@ -104,18 +104,19 @@
                 echo "<td>$i h</td>";
                 echo "<td>";
                 //Gestion de l'affichage des intervenants
-            
-                foreach ($lesInterventions as $uneIntervention) {
-                    $date_int= $uneIntervention['date_intervention'];
-                    $timestamp = strtotime($date_int);
-                    $timestamp1 = strtotime($currentDate);
-                    if($timestamp == $timestamp1 && $i == $uneIntervention['heure'] && $uneIntervention['etat'] == "Valider"){
-                        echo "<input type='hidden' name='idintervention' value='".$uneIntervention['idintervention'].".'>";
-                        echo "<button type='submit' name='Modifier' class='btn btn-primary'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." à ".$uneIntervention['heure']."</button>";
-                    } else {
-                        //echo "cdsfcsecs";
-                    }
-                };
+                if(!empty($lesInterventions))
+                {
+                    foreach ($lesInterventions as $uneIntervention) {
+                        $date_int= $uneIntervention['date_intervention'];
+                        $timestamp = strtotime($date_int);
+                        $timestamp1 = strtotime($currentDate);
+                        if($timestamp == $timestamp1 && $i == $uneIntervention['heure'] && $uneIntervention['etat'] == "Valider"){
+                            echo "<input type='hidden' name='idintervention' value='".$uneIntervention['idintervention'].".'>";
+                            echo "<button type='submit' name='Modifier' class='btn btn-primary'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." à ".$uneIntervention['heure']."</button>";
+                        } else {
+                        }
+                }
+                }
 
 
 // restriction  en fonction de la date d'intervention et heure d'intervention + parcours de la liste
