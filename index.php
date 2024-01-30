@@ -91,7 +91,7 @@ switch ($page) {
         if (!isset($_SESSION['idclient'])) {
             require_once("gestion_connexion.php");
         } else {
-            header('Location: /stage/');
+            header('Location: /Gestion_Intervenants/');
         }
         break;
     case "salle" :
@@ -101,7 +101,7 @@ switch ($page) {
         }
         else
         {
-            header('Location: /stage/');
+            header('Location: /Gestion_Intervenants/');
         }
         break;
     case "intervention" :
@@ -113,28 +113,28 @@ switch ($page) {
         {
             require_once("gestion_intervention.php");
         } else {
-            header('Location: /stage/');
+            header('Location: /Gestion_Intervenants/');
         }
         break;
     case "inscription" :
         if (!isset($_SESSION['idclient'])) {
             require_once("gestion_inscription.php");
         } else {
-            header('Location: /stage/');
+            header('Location: /Gestion_Intervenants/');
         }
         break;
     case "inscription-administratif" :
         if (!isset($_SESSION['idclient'])) {
             require_once("gestion_inscription_administratif.php");
         } else {
-            header('Location: /stage/');
+            header('Location: /Gestion_Intervenants/');
         }
         break;
     case "inscription-enseignant" :
         if (!isset($_SESSION['idclient'])) {
             require_once("gestion_inscription_enseignant.php");
         } else {
-            header('Location: /stage/');
+            header('Location: /Gestion_Intervenants/');
         }
         break;
     case "profil" :
@@ -166,7 +166,7 @@ switch ($page) {
         }
         else
         {
-            header('Location: /stage/');
+            header('Location: /Gestion_Intervenants/');
         }
         break;
     case "profil_intervenant" :
@@ -176,7 +176,7 @@ switch ($page) {
         }
         else
         {
-            header('Location: /stage/');
+            header('Location: /Gestion_Intervenants/');
         }
         break;
     default :

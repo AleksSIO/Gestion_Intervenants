@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_SESSION['idclient'])) {
-    header('Location: /stage/');
+    header('Location: /Gestion_Intervenants/');
     exit();
 }
 

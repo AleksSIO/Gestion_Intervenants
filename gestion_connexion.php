@@ -300,7 +300,7 @@ if (isset($_POST['Connexion'])) {
 
 							$unControleur->setTable("vclient");
 
-	            			echo '<script language="javascript">document.location.replace("/stage/");</script>';
+	            			echo '<script language="javascript">document.location.replace("/Gestion_Intervenants/");</script>';
 	            		}
 	            	} // Fin : SI ON OBTIENT LA CONNEXION (identifiants et date_dernier_changement_mdp corrects)
 	            } else {
