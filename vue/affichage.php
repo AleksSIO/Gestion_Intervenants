@@ -44,6 +44,12 @@
 
             return dateFormatee;
             }
+
+            function submitForm() {
+            document.getElementById("dateForm").submit();
+            }
+
+
         </script>
     </head>
     <body>
@@ -78,7 +84,7 @@
                 </tr>
             </thead>
             <tbody>
-            <form action="affichage" method ="post">
+            <form id="dateForm" action="affichage" method ="post">
                 <?php 
                     //Appel de la fonction qui recupère les interventions par jour 
                     $currentDateTime = new DateTime('now');
@@ -88,7 +94,7 @@
                 <div class="form-group col-md-6">
    
                     <label for="date_affichage" class="a1">Date choisis</label>
-                    <input type="date" class="form-control" name ="date_affichage" value="<?= $currentDate ?>" id="date_affichage" onchange="return(submit());" required>
+                    <input type="date" class="form-control" name ="date_affichage" value="<?= $currentDate ?>" id="date_affichage" onchange="submitForm();" required>
 
                 </div>
 
