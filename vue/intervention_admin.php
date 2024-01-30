@@ -47,120 +47,120 @@
             <tr>
                 <th>
                     <p class="card-text">
-                        <b>Id Intervention : </b>
+                        <b>Id Intervention </b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Responsable : </b>
+                        <b> Responsable </b>
                     </p>
                 </th>
                 <th>
                     <p class="card-text">
-                        <b> E-mail : </b>
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Date de l'intervention : </b>
+                        <b> E-mail  </b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Heure : </b>
+                        <b> Date de l'intervention  </b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Classe ou groupe concerné : </b>  
+                        <b> Heure  </b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Nom de la salle : </b>  
+                        <b> Classe ou groupe concerné  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Nom de l'intervenant : </b>  
+                        <b> Nom de la salle  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b>Prénom de l'intervenant : </b>  
+                        <b> Nom de l'intervenant  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Organisme : </b>  
+                        <b>Prénom de l'intervenant  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Présentation au CA : </b>  
+                        <b> Organisme  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Date de la présentation au CA : </b>  
+                        <b> Présentation au CA  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Précision à ajouter : </b>  
+                        <b> Date de la présentation au CA  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Lieu où l'intervenant mange : </b>  
+                        <b> Précision à ajouter  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Pris en charge financièrement par : </b>  
+                        <b> Lieu où l'intervenant mange  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Précision à ajouter : </b>  
+                        <b> Pris en charge financièrement par  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b>Précision à ajouter : </b>  
+                        <b> Précision à ajouter  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b>Type d'intervention : </b>  
+                        <b>Précision à ajouter  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b>Date de transmission : </b>  
+                        <b>Type d'intervention  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b>Responsable de formation : </b>  
+                        <b>Date de transmission  </b>  
+                    </p>
+                </th>
+
+                <th>
+                    <p class="card-text">
+                        <b>Responsable de formation  </b>  
                     </p>
                 </th>
             </tr>
