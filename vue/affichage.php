@@ -67,7 +67,7 @@
 
             
         <label for="date_intervention" class="a1">Date intervention</label>
-        <input type="date" class="form-control" name ="date_intervention" value="<?= ($uneIntervention != null ? $uneIntervention['date_intervention'] : null); ?>" id="date_intervention" required>
+        <input type="date" class="form-control" name ="date_intervention" value="" id="date_intervention" required>
 
         </div>
         
@@ -103,31 +103,32 @@
 
             <form method ="post" action ="profil_intervenant">
 
-            
-
                 <?php for ($i = 8; $i < 20; $i++){ 
                 echo "<tr>";
                 echo "<td>$i h</td>";
                 echo "<td>";
+
+                $interventionTrouvee = false;
                 //Gestion de l'affichage des intervenants
-                if(!empty($lesInterventions))
-                {
+                if (!empty($lesInterventions)) {
                     foreach ($lesInterventions as $uneIntervention) {
-                        $date_int= $uneIntervention['date_intervention'];
-                        $timestamp = strtotime($date_int);
-                        $timestamp1 = strtotime($currentDate);
-                        if($timestamp == $timestamp1 && $i == $uneIntervention['heure'] && $uneIntervention['etat'] == "Valider"){
-                            echo "<input type='hidden' name='idintervention' value='".$uneIntervention['idintervention'].".'>";
-                            echo "<button type='submit' name='Modifier' class='btn btn-primary'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." à ".$uneIntervention['heure']."</button>";
-                        } else {
-                        }
+                        
+                            $date_int = !empty($uneIntervention['date_intervention']) ? $uneIntervention['date_intervention'] : 0;
+                            $timestamp = strtotime($date_int);
+                            $timestamp1 = strtotime($currentDate);
+                            if ($timestamp == $timestamp1 && (int)$i == (int)$uneIntervention['heure'] && $uneIntervention['etat'] == "Valider") {
+                                echo "<input type='hidden' name='idintervention' value='".$uneIntervention['idintervention'].".'>";
+                                echo "<button type='submit' name='Modifier' class='btn btn-primary'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." à ".$uneIntervention['heure']."</button>";
+                                
+                                $interventionTrouvee = true;
+                            } 
+                        
+                    }
                 }
+
+                if (!$interventionTrouvee) {
+                    echo "Aucune intervention pour cette heure.";
                 }
-
-
-// restriction  en fonction de la date d'intervention et heure d'intervention + parcours de la liste
-
-
 
 
                 //fin 

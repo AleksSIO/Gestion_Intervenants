@@ -1,6 +1,5 @@
 <?php
 //Récupération de la date sélectionné
-
 if (isset($_SESSION['idclient']))
 {
     if(isset($_POST['date_affichage']))
@@ -20,7 +19,7 @@ $count=0;
 $date = new DateTime();
 // liste de récupérations de tte les interventions par date
 $where = array("date_intervention"=>$date_affichage);
-$lesInterventions = $unControleur->selectWhere("date_intervention", $where);
+$lesInterventions = $unControleur->selectWhereAll($where);
 
 if(!empty($lesInterventions))
 {

@@ -43,7 +43,7 @@ if (isset($_SESSION['idclient']))
 		switch($action)
 		{
 			case 'edit':
-				$uneIntervention = $unControleur->selectWhere("*", $where);
+				$uneIntervention = $unControleur->selectWhere($where ,"*");
 		}
 	}
 
@@ -91,7 +91,7 @@ if (isset($_SESSION['idclient']))
 		$unControleur->setTable("intervention");
 		$idsalle = $_GET['idsalle'];
 		$where = array("idsalle"=>$idsalle);
-		$uneSalle = $unControleur->selectWhere("idsalle", $where);
+		$uneSalle = $unControleur->selectWhere($where, "idsalle");
 		if ($uneSalle)
 		{
 			$tab = array("idsalle"=>$idsalle);

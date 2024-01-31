@@ -30,7 +30,7 @@ class Modele {
 		}
 	}
 
-	public function selectWhereAll($chaine, $where) {
+	public function selectWhereAll($where, $chaine) {
     	if ($this->pdo != null) {
     		$champs = array();
 			$donnees = array();
@@ -66,7 +66,7 @@ class Modele {
 		}
 	}
 
-	public function selectWhere($chaine, $where) {
+	public function selectWhere($where, $chaine) {
 		if ($this->pdo != null) {
 			$champs = array();
 			$donnees = array();
