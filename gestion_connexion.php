@@ -12,7 +12,7 @@ if (isset($_POST['Connexion'])) {
 
 			// Vérification de l'adresse email saisie par le client
 			$where = array("email"=>$email);
-			$unClient = $unControleur->selectWhere("*", $where);
+			$unClient = $unControleur->selectWhere($where, "*");
 			
 			if (!$unClient) { // Si l'adresse email saisie ne se trouve pas dans la base de données
 				$erreur = "Adresse email incorrecte !";
@@ -55,14 +55,14 @@ if (isset($_POST['Connexion'])) {
 						if ($unClient['type'] == 'Particulier') {
 							$unControleur->setTable("particulier");
 							$where = array("email"=>$email);
-							$unParticulier = $unControleur->selectWhere("*", $where);
+							$unParticulier = $unControleur->selectWhere($where, "*" );
 							$_SESSION['prenom'] = $unParticulier['prenom'];
 						}
 						// Si le client est Professionnel, on initialise son 'statut'
 						if ($unClient['type'] == 'Professionnel') {
 							$unControleur->setTable("professionnel");
 							$where = array("email"=>$email);
-							$unProfessionnel = $unControleur->selectWhere("*", $where);
+							$unProfessionnel = $unControleur->selectWhere($where, "*");
 							$_SESSION['statut'] = $unProfessionnel['statut'];
 						}
 
@@ -282,14 +282,14 @@ if (isset($_POST['Connexion'])) {
 							if ($unClient['type'] == 'Particulier') {
 								$unControleur->setTable("particulier");
 								$where = array("email"=>$email);
-								$unParticulier = $unControleur->selectWhere("*", $where);
+								$unParticulier = $unControleur->selectWhere($where, "*");
 								$_SESSION['prenom'] = $unParticulier['prenom'];
 							}
 							// Si le client est Professionnel, on initialise son 'statut'
 							if ($unClient['type'] == 'Professionnel') {
 								$unControleur->setTable("professionnel");
 								$where = array("email"=>$email);
-								$unProfessionnel = $unControleur->selectWhere("*", $where);
+								$unProfessionnel = $unControleur->selectWhere($where, "*");
 								$_SESSION['statut'] = $unProfessionnel['statut'];
 							}
 
