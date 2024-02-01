@@ -38,7 +38,7 @@ if (isset($_SESSION['idclient']))
 		$idintervention = $_POST['idintervention'];
 		$where = array("idintervention"=>$idintervention);
 	
-	    $uneIntervention = $unControleur->selectWhere("*", $where);
+	    $uneIntervention = $unControleur->selectWhere($where,"*");
 
 	}
 

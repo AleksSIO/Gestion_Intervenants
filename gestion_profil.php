@@ -101,7 +101,7 @@ if (isset($_SESSION['idclient'])) {
 	}
 
 } else {
-	header('Location: /filelec/');
+	header('Location: /Gestion_Intervenants/');
 }
 
 ?>

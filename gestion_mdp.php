@@ -16,7 +16,7 @@ if (isset($_POST['Valider'])) {
 					$reponse = $_POST['reponse'];
 					if ($reponse != "") {
 						$where = array("enonce"=>$enonce, "reponse"=>$reponse, "email"=>$email);
-						$reponseCorrect = $unControleur->selectWhere("*", $where);
+						$reponseCorrect = $unControleur->selectWhere($where, "*");
 						if ($reponseCorrect['reponse'] == $reponse) {
 							$unControleur->setTable("client");
 							$mdp = $_POST['mdp'];
@@ -29,7 +29,7 @@ if (isset($_POST['Valider'])) {
 										"date_dernier_changement_mdp"=>date("Y-m-d H:i:s", strtotime("+2 hour"))
 									);
 									$unControleur->update($tab, $where);
-									echo "<script>alert('Votre mot de passe a bien été modifié ! Veuillez vous reconnecter.');window.location.href='/filelec/connexion';</script>";
+									echo "<script>alert('Votre mot de passe a bien été modifié ! Veuillez vous reconnecter.');window.location.href='/Gestion_Intervenants/connexion';</script>";
 								} else {
 									$erreur = "Les mots de passe ne correspondent pas.";
 								}

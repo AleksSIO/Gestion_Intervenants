@@ -46,8 +46,9 @@
             }
 
             function submitForm() {
-            document.getElementById("dateForm").submit();
+                document.getElementById("dateForm").submit();
             }
+
 
 
         </script>
@@ -75,7 +76,6 @@
         </form>
         --->
         
-
         <table border="1" width="100%" height="100%">
             <thead>
                 <tr>
@@ -87,14 +87,13 @@
             <form id="dateForm" action="affichage" method ="post">
                 <?php 
                     //Appel de la fonction qui recupère les interventions par jour 
-                    $currentDateTime = new DateTime('now');
-                    $currentDate = $currentDateTime->format('Y-m-d');
+                    $currentDateTime = isset($date_affichage) ? $date_affichage : new DateTime('now');
                 ?>
 
                 <div class="form-group col-md-6">
    
                     <label for="date_affichage" class="a1">Date choisis</label>
-                    <input type="date" class="form-control" name ="date_affichage" value="<?= $currentDate ?>" id="date_affichage" onchange="submitForm();" required>
+                    <input type="date" class="form-control" name ="date_affichage" value="<?= $currentDateTime ?>" id="date_affichage" onchange="submitForm();" required>
 
                 </div>
 
@@ -115,7 +114,7 @@
                         
                             $date_int = !empty($uneIntervention['date_intervention']) ? $uneIntervention['date_intervention'] : 0;
                             $timestamp = strtotime($date_int);
-                            $timestamp1 = strtotime($currentDate);
+                            $timestamp1 = strtotime($currentDateTime);
                             if ($timestamp == $timestamp1 && (int)$i == (int)$uneIntervention['heure'] && $uneIntervention['etat'] == "Valider") {
                                 echo "<input type='hidden' name='idintervention' value='".$uneIntervention['idintervention'].".'>";
                                 echo "<button type='submit' name='Modifier' class='btn btn-primary'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." à ".$uneIntervention['heure']."</button>";
@@ -138,7 +137,6 @@
             </form>
             </tbody>
         </table>
-
         
 
         <script>

@@ -7,7 +7,7 @@ if (isset($_SESSION['idclient']) && isset($_SESSION['role']) && $_SESSION['role'
 	require_once("vue/vue_admin.php");
 
 } else {
-	header('Location: /filelec/');
+	header('Location: /Gestion_Intervenants/');
 }
 
 ?>
