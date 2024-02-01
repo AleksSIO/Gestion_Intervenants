@@ -49,6 +49,18 @@
                 document.getElementById("dateForm").submit();
             }
 
+            function getDateAffichage() {
+                var dateElement = document.getElementById("date_affichage").value;
+                const maDate = dateElement.split("-");
+                var annee = maDate[0];
+                var mois = maDate[1];
+                var jour = maDate[2];
+
+                var dateFormatee = jour + '/' + mois + '/' + annee;
+
+                return dateFormatee;
+            }
+
 
 
         </script>
@@ -60,21 +72,6 @@
         <br>
         <br>
         <br>
-
-        <!---
-        <form action="">
-
-        <div class="form-group col-md-6">
-
-            
-        <label for="date_intervention" class="a1">Date intervention</label>
-        <input type="date" class="form-control" name ="date_intervention" value="" id="date_intervention" required>
-
-        </div>
-        
-
-        </form>
-        --->
         
         <table border="1" width="100%" height="100%">
             <thead>
@@ -140,8 +137,10 @@
         
 
         <script>
+
+            
             // Utilisation de la fonction pour obtenir la date du jour
-            var dateDuJour = getDateDuJour();
+            var dateDuJour = getDateAffichage();
 
             // Affichage de la date dans l'élément avec l'id "date"
             document.getElementById("date").innerHTML = dateDuJour;
