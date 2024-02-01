@@ -123,7 +123,7 @@
                 }
 
                 if (!$interventionTrouvee) {
-                    echo "Aucune intervention pour cette heure.";
+                    echo "";
                 }
 
 
