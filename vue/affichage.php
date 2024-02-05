@@ -64,6 +64,20 @@
 
 
         </script>
+        <style>
+            .intervention-cell {
+                padding: 5px;
+            }
+
+            .intervention-cell-color {
+                background-color: #0d6efd;
+                border-radius: 0;
+            }
+
+            .empty-cell {
+                padding: 10px;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -76,8 +90,7 @@
         <table border="1" width="100%" height="100%">
             <thead>
                 <tr>
-                    <th></th>
-                    <th>Date du jour : <span id="date"></span></th>
+                    <th colspan="13" style='text-align: center;'>Date du jour : <span id="date"></span></th>
                 </tr>
             </thead>
             <tbody>
@@ -89,7 +102,7 @@
 
                 <div class="form-group col-md-6">
    
-                    <label for="date_affichage" class="a1">Date choisis</label>
+                    <label for="date_affichage" class="a1">Date choisie</label>
                     <input type="date" class="form-control" name ="date_affichage" value="<?= $currentDateTime ?>" id="date_affichage" onchange="submitForm();" required>
 
                 </div>
@@ -99,38 +112,51 @@
 
             <form method ="post" action ="profil_intervenant">
 
-                <?php for ($i = 8; $i < 20; $i++){ 
-                echo "<tr>";
-                echo "<td>$i h</td>";
-                echo "<td>";
+                <tr>
+                    <th style='text-align: center;'>Interventions</th>
+                    <?php for ($i = 8; $i < 20; $i++){
+                                echo "<td style='text-align: center;'>$i h</td>";
+                    } ?>
+                </tr>
 
-                $interventionTrouvee = false;
+                <?php 
                 //Gestion de l'affichage des intervenants
                 if (!empty($lesInterventions)) {
                     foreach ($lesInterventions as $uneIntervention) {
-                        
+
                             $date_int = !empty($uneIntervention['date_intervention']) ? $uneIntervention['date_intervention'] : 0;
                             $timestamp = strtotime($date_int);
                             $timestamp1 = strtotime($currentDateTime);
-                            if ($timestamp == $timestamp1 && (int)$i == (int)$uneIntervention['heure_debut'] && $uneIntervention['etat'] == "Valider") {
-                                echo "<input type='hidden' name='idintervention' value='".$uneIntervention['idintervention'].".'>";
-                                echo "<button type='submit' name='Modifier' class='btn btn-primary'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." à ".$uneIntervention['heure_debut']."</button>";
-                                
-                                $interventionTrouvee = true;
+                            $heure_debut = substr($uneIntervention['heure_debut'], 0, 5);
+                            $heure_fin = !empty($uneIntervention['heure_fin']) ? substr($uneIntervention['heure_fin'], 0, 5) : null;
+                            if ($timestamp == $timestamp1 && $uneIntervention['etat'] == "Valider") {
+                            echo "<tr>";
+                            echo "<td style='width: 370px;'>";
+                            echo "<input type='hidden' name='idintervention' value='".$uneIntervention['idintervention'].".'>";
+                            echo "<button type='submit' name='Modifier' class='btn btn-primary' style='border-radius: 0;'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." de ".$heure_debut." à ".$heure_fin."</button>";
+                            echo "</td>";
+                            for ($i = 8; $i < 20; $i++){
+                                $cellClass = ($i >= (int)$heure_debut && $i < (int)$heure_fin) ? 'intervention-cell intervention-cell-color' : 'intervention-cell';
+                                echo "<td class='$cellClass'></td>";
                             } 
                         
-                    }
+                    echo "</tr>";
+                        }
+                        else {
+                            echo "<tr>";
+                            echo "<td></td>";
+                            for ($i = 8; $i < 20; $i++){
+                                echo "<td class='empty-cell'></td>";
+                            }
+                            echo "</tr>";
+                        }
                 }
 
-                if (!$interventionTrouvee) {
-                    echo "";
+                
+
+               
                 }
-
-
-                //fin 
-                echo" </td>";
-                echo "</tr>";
-                } ?>
+                 ?>
             </form>
             </tbody>
         </table>
