@@ -156,6 +156,14 @@
 
                
                 }
+                else {
+                    echo "<tr>";
+                    echo "<td></td>";
+                    for ($i = 8; $i < 20; $i++){
+                        echo "<td class='empty-cell'></td>";
+                    }
+                    echo "</tr>";
+                }
                  ?>
             </form>
             </tbody>
