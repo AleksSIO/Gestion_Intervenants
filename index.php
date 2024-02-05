@@ -6,7 +6,7 @@ $unControleur = new Controleur($hostname, $database, $username, $password);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Stage</title>
+    <title>Gestion des intervenants</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
