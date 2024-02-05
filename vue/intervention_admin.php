@@ -76,6 +76,12 @@
 
                 <th>
                     <p class="card-text">
+                        <b> Heure de fin  </b>
+                    </p>
+                </th>
+
+                <th>
+                    <p class="card-text">
                         <b> Classe ou groupe concerné  </b>  
                     </p>
                 </th>
@@ -170,8 +176,12 @@
 
             </tbody>
 
-                <?php foreach ($lesInterventions as $uneIntervention) { ?>	
-
+                <?php foreach ($lesInterventions as $uneIntervention) { 
+                    $date_intervention = date('d/m/Y', strtotime($uneIntervention['date_intervention']));
+                    $date_presentation = date('d/m/Y', strtotime($uneIntervention['date_presentation']));
+                    $date_transmission = date('d/m/Y', strtotime($uneIntervention['date_transmission']));
+                    ?>	
+                    
                     <tr>
                         <td>
                             <p class="card-text">
@@ -192,13 +202,19 @@
 
                         <td>
                             <p class="card-text">
-                                <?= $uneIntervention['date_intervention']; ?>
+                                <?= $date_intervention; ?>
                             </p>
                         </td>
 
                         <td>
                             <p class="card-text">
-                                <?= $uneIntervention['heure_debut']; ?>
+                                <?= substr($uneIntervention['heure_debut'], 0, 5); ?>
+                            </p>
+                        </td>
+
+                        <td>
+                            <p class="card-text">
+                                <?= substr($uneIntervention['heure_fin'], 0, 5); ?>
                             </p>
                         </td>
 
@@ -240,7 +256,7 @@
 
                         <td>
                             <p class="card-text">
-                                <?= $uneIntervention['date_presentation']; ?>
+                                <?= $date_presentation; ?>
                             </p>
                         </td>
 
@@ -282,7 +298,7 @@
 
                         <td>
                             <p class="card-text">
-                                <?= $uneIntervention['date_transmission']; ?>
+                                <?= $date_transmission; ?>
                             </p>
                         </td>
 
