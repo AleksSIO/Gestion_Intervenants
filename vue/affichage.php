@@ -112,9 +112,9 @@
                             $date_int = !empty($uneIntervention['date_intervention']) ? $uneIntervention['date_intervention'] : 0;
                             $timestamp = strtotime($date_int);
                             $timestamp1 = strtotime($currentDateTime);
-                            if ($timestamp == $timestamp1 && (int)$i == (int)$uneIntervention['heure'] && $uneIntervention['etat'] == "Valider") {
+                            if ($timestamp == $timestamp1 && (int)$i == (int)$uneIntervention['heure_debut'] && $uneIntervention['etat'] == "Valider") {
                                 echo "<input type='hidden' name='idintervention' value='".$uneIntervention['idintervention'].".'>";
-                                echo "<button type='submit' name='Modifier' class='btn btn-primary'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." à ".$uneIntervention['heure']."</button>";
+                                echo "<button type='submit' name='Modifier' class='btn btn-primary'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." à ".$uneIntervention['heure_debut']."</button>";
                                 
                                 $interventionTrouvee = true;
                             } 

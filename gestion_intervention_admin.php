@@ -76,7 +76,8 @@ if (isset($_SESSION['idclient']))
                 "date_intervention"=>$_POST['date_intervention'],
                 "classe"=>$_POST['classe'],
                 "nom_salle"=>$_POST['nom_salle'],
-                "heure"=>$_POST['heure'],
+                "heure_debut"=>$_POST['heure_debut'],
+				"heure_fin"=>$_POST['heure_fin'],
                 "etat"=>$etat
                 
 
@@ -111,7 +112,8 @@ if (isset($_SESSION['idclient']))
             echo " - date_intervention ".$_POST['date_intervention'];
             echo " - classe ".$_POST['classe'];
             echo " - nom_salle ".$_POST['nom_salle'];
-            echo " - heure ".$_POST['heure'];
+            echo " - heure_debut ".$_POST['heure_debut'];
+			echo " - heure_fin ".$_POST['heure_fin'];
             echo " - nom_inter ".$_POST['nom_inter'];
             echo " - prenom_inter ".$_POST['prenom_inter'];
             echo " - organisme ".$_POST['organisme'];
@@ -145,7 +147,8 @@ if (isset($_SESSION['idclient']))
                 "date_intervention"=>$_POST['date_intervention'],
                 "classe"=>$_POST['classe'],
                 "nom_salle"=>$_POST['nom_salle'],
-                "heure"=>$_POST['heure'],
+                "heure_debut"=>$_POST['heure_debut'],
+				"heure_fin"=>$_POST['heure_fin'],
                 "nom_inter"=>$_POST['nom_inter'],
                 "prenom_inter"=>$_POST['prenom_inter'],
                 "organisme"=>$_POST['organisme'],

@@ -65,8 +65,15 @@
 
                     <div class="form-group col-md-6">
 
-                        <label for="heure" class="a1">Horaire</label>
-                        <input type="time" class="form-control" name="heure" value="<?= ($uneIntervention != null ? $uneIntervention['heure'] : null); ?>" id="heure" placeholder="Email" required>
+                        <label for="heure_debut" class="a1">Heure de début</label>
+                        <input type="time" class="form-control" name="heure_debut" value="<?= ($uneIntervention != null ? $uneIntervention['heure_debut'] : null); ?>" id="heure_debut" placeholder="Email" required>
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+
+                        <label for="heure_fin" class="a1">Heure de fin</label>
+                        <input type="time" class="form-control" name="heure_fin" value="<?= ($uneIntervention != null ? $uneIntervention['heure_fin'] : null); ?>" id="heure_fin" placeholder="Email" required>
 
                     </div>
 

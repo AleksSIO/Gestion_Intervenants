@@ -70,7 +70,7 @@
 
                 <th>
                     <p class="card-text">
-                        <b> Heure  </b>
+                        <b> Heure de début  </b>
                     </p>
                 </th>
 
@@ -198,7 +198,7 @@
 
                         <td>
                             <p class="card-text">
-                                <?= $uneIntervention['heure']; ?>
+                                <?= $uneIntervention['heure_debut']; ?>
                             </p>
                         </td>
 
