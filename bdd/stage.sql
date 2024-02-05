@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 25 jan. 2024 à 15:09
+-- Généré le : lun. 05 fév. 2024 à 12:27
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.2.11
 
@@ -39,8 +39,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteSalle` (IN `p_idsalle` INT)  
 delete from salle where idsalle = p_idsalle;
 End$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insertIntervention` (IN `p_responsable` VARCHAR(50), IN `p_email` VARCHAR(100), IN `p_date_intervention` DATE, IN `p_classe` VARCHAR(30), IN `p_nom_salle` VARCHAR(10), IN `p_heure` TIME, IN `p_nom_inter` VARCHAR(50), `p_prenom_inter` VARCHAR(50), `p_organisme` VARCHAR(100), `p_presentation_ca` VARCHAR(10), `p_date_presentation` DATE, `p_infos` VARCHAR(500), `p_lieu_repas` VARCHAR(50), `p_payeur` VARCHAR(50), `p_besoin_parking` VARCHAR(10), `p_infos2` VARCHAR(500), `p_type_intervention` VARCHAR(50), `p_date_transmission` DATE, `p_responsable_form` VARCHAR(50))   Begin
-insert into intervention (responsable, email, date_intervention, classe, nom_salle, heure, nom_inter, prenom_inter, organisme, presentation_ca, date_presentation, infos, lieu_repas, payeur, besoin_parking, infos2, type_intervention, date_transmission, responsable_form) values (p_responsable, p_email, p_date_intervention, p_classe, p_nom_salle, p_heure, p_nom_inter, p_prenom_inter, p_organisme, p_presentation_ca, p_date_presentation, p_infos, p_lieu_repas, p_payeur, p_besoin_parking, p_infos2, p_type_intervention, p_date_transmission, p_responsable_form);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertIntervention` (IN `p_responsable` VARCHAR(50), IN `p_email` VARCHAR(100), IN `p_date_intervention` DATE, IN `p_classe` VARCHAR(30), IN `p_nom_salle` VARCHAR(10), IN `p_heure_debut` TIME, IN `p_heure_fin` TIME, IN `p_nom_inter` VARCHAR(50), IN `p_prenom_inter` VARCHAR(50), IN `p_organisme` VARCHAR(100), IN `p_presentation_ca` VARCHAR(10), IN `p_date_presentation` DATE, IN `p_infos` VARCHAR(500), IN `p_lieu_repas` VARCHAR(50), IN `p_payeur` VARCHAR(50), IN `p_besoin_parking` VARCHAR(10), IN `p_infos2` VARCHAR(500), IN `p_type_intervention` VARCHAR(50), IN `p_date_transmission` DATE, IN `p_responsable_form` VARCHAR(50))   Begin
+insert into intervention (responsable, email, date_intervention, classe, nom_salle, heure_debut, heure_fin, nom_inter, prenom_inter, organisme, presentation_ca, date_presentation, infos, lieu_repas, payeur, besoin_parking, infos2, type_intervention, date_transmission, responsable_form) values (p_responsable, p_email, p_date_intervention, p_classe, p_nom_salle, p_heure_debut, p_heure_fin, p_nom_inter, p_prenom_inter, p_organisme, p_presentation_ca, p_date_presentation, p_infos, p_lieu_repas, p_payeur, p_besoin_parking, p_infos2, p_type_intervention, p_date_transmission, p_responsable_form);
 End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insertParticulier` (IN `p_nom` VARCHAR(30), IN `p_prenom` VARCHAR(30), IN `p_tel` VARCHAR(10), IN `p_email` VARCHAR(50), IN `p_mdp` VARCHAR(255), IN `p_adresse` VARCHAR(100), IN `p_cp` VARCHAR(5), IN `p_ville` VARCHAR(50), IN `p_pays` VARCHAR(50), IN `p_etat` ENUM("Prospect","Client actif","Client très actif"), IN `p_role` ENUM("client","admin"))   Begin
@@ -104,8 +104,8 @@ and ROUTINE_TYPE = 'function';
 insert into BDD values (nomBdd, nbview, nbtrigger, nbprocedure, nbfunction);
 End$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `updateIntervention` (IN `p_idintervention` INT, IN `p_responsable` VARCHAR(50), IN `p_email` VARCHAR(100), IN `p_date_intervention` DATE, IN `p_classe` VARCHAR(30), IN `p_nom_salle` VARCHAR(10), IN `p_heure` TIME, IN `p_etat` VARCHAR(50))   Begin
-update intervention set responsable = p_responsable, email = p_email, date_intervention = p_date_intervention, classe = p_classe, nom_salle = p_nom_salle, heure = p_heure, etat = p_etat
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateIntervention` (IN `p_idintervention` INT, IN `p_responsable` VARCHAR(50), IN `p_email` VARCHAR(100), IN `p_date_intervention` DATE, IN `p_classe` VARCHAR(30), IN `p_nom_salle` VARCHAR(10), IN `p_heure_debut` TIME, IN `p_heure_fin` TIME, IN `p_etat` VARCHAR(50))   Begin
+update intervention set responsable = p_responsable, email = p_email, date_intervention = p_date_intervention, classe = p_classe, nom_salle = p_nom_salle, heure_debut = p_heure_debut, heure_fin = p_heure_fin, etat = p_etat
 where idintervention = p_idintervention;
 End$$
 
@@ -238,9 +238,9 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`idclient`, `nom`, `tel`, `email`, `mdp`, `adresse`, `cp`, `ville`, `pays`, `etat`, `role`, `nbTentatives`, `bloque`, `nbConnexion`, `type`, `date_creation_mdp`, `date_dernier_changement_mdp`, `date_creation_compte`, `connexion`, `deconnexion`) VALUES
-(1, 'CLIENT1', '0353952424', 'client1.client1@gmail.com', '85202cb5e62aa20889886fb546ab5d22f8c0bd08', '3, rue de Aulnay', '93600', 'AULNAY SOUS BOISA', 'France', 'Prospect', 'client', 0, 0, 0, 'Particulier', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40'),
+(1, 'CLIENT1', '0353952424', 'client1.client1@gmail.com', '19e13e4784e2fa0b6ee85640afe2995fb1380635', '3, rue de Aulnay', '93600', 'AULNAY SOUS BOISA', 'France', 'Prospect', 'client', 0, 0, 5, 'Particulier', '2024-01-23 10:49:40', '2024-02-01 11:19:19', '2024-01-23 10:49:40', '2024-02-05 10:22:57', '2024-01-23 10:49:40'),
 (2, 'CLIENT2', '0214316122', 'client2.client2@gmail.com', 'f5116ff48b50defd772a3a95b7ea1fcd1f9343e8', '15, rue de Aulnay', '93600', 'AULNAY SOUS BOIS', 'France', 'Prospect', 'client', 0, 0, 0, 'Particulier', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40'),
-(3, 'ADMIN1', '0101010101', 'admin1.admin1@gmail.com', '107d348bff437c999a9ff192adcb78cb03b8ddc6', '5, rue de Aulnay', '93600', 'AULNAY SOUS BOIS', 'France', 'Prospect', 'admin', 0, 0, 2, 'Particulier', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-25 15:53:04', '2024-01-23 10:49:40'),
+(3, 'ADMIN1', '0101010101', 'admin1.admin1@gmail.com', '107d348bff437c999a9ff192adcb78cb03b8ddc6', '5, rue de Aulnay', '93600', 'AULNAY SOUS BOIS', 'France', 'Prospect', 'admin', 0, 0, 19, 'Particulier', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-02-05 10:23:10', '2024-01-23 10:49:40'),
 (4, 'ADMIN2', '0101010102', 'admin2.admin2@gmail.com', '107d348bff437c999a9ff192adcb78cb03b8ddc6', '5, rue de Aulnay', '93600', 'AULNAY SOUS BOIS', 'France', 'Prospect', 'admin', 0, 0, 0, 'Particulier', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40'),
 (5, 'CLIENTPRO1', '0262560147', 'clientpro1.clientpro1@gmail.com', '45fedd7522cdf5797af7da40a2171237972c8d6b', '95, rue de aulnay', '93600', 'AULNAY SOUS BOIS', 'France', 'Prospect', 'client', 0, 0, 0, 'Professionnel', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40'),
 (6, 'CLIENTPRO2', '0173212847', 'clientpro2.clientpro2@gmail.com', 'b79a0312ecc0dc9635163aa2428265157d880fb2', '88, rue de aulnay', '93600', 'AULNAY SOUS BOIS', 'France', 'Prospect', 'client', 0, 0, 0, 'Professionnel', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40', '2024-01-23 10:49:40'),
@@ -259,7 +259,8 @@ CREATE TABLE `intervention` (
   `date_intervention` date DEFAULT NULL,
   `classe` varchar(30) DEFAULT NULL,
   `nom_salle` varchar(10) DEFAULT NULL,
-  `heure` time DEFAULT NULL,
+  `heure_debut` time DEFAULT NULL,
+  `heure_fin` time DEFAULT NULL,
   `etat` varchar(50) DEFAULT NULL,
   `nom_inter` varchar(50) NOT NULL,
   `prenom_inter` varchar(50) NOT NULL,
@@ -276,6 +277,17 @@ CREATE TABLE `intervention` (
   `responsable_form` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Déchargement des données de la table `intervention`
+--
+
+INSERT INTO `intervention` (`idintervention`, `responsable`, `email`, `date_intervention`, `classe`, `nom_salle`, `heure_debut`, `heure_fin`, `etat`, `nom_inter`, `prenom_inter`, `organisme`, `presentation_ca`, `date_presentation`, `infos`, `lieu_repas`, `payeur`, `besoin_parking`, `infos2`, `type_intervention`, `date_transmission`, `responsable_form`) VALUES
+(7, 'Mr Blavin', 'blabla@gmail.com', '2024-01-31', '1SIOB', 'D202', '12:00:00', '13:00:00', 'Valider', 'NIKOLIC', 'Aleksandar', 'Lycée', 'Oui', '2023-12-12', 'Aucune', 'Lycée', 'Lycée', 'Non', 'Aucune', 'Informatif', '2024-01-25', 'Mr Blavin'),
+(8, 'Mr Blavin', 'blabla@gmail.com', '2024-01-31', '1SIOB', 'D202', '12:00:00', '14:00:00', 'Valider', 'LIANA', 'Kamil', 'Lycée', 'Oui', '2023-12-13', 'Aucune', 'Lycée', 'Lycée', 'Non', 'Aucune', 'Informatif', '2024-01-25', 'Mr Blavin'),
+(9, 'Mr Blavin', 'blabla@gmail.com', '2024-02-01', '1SIOB', 'D202', '15:00:00', '16:00:00', 'Valider', 'LIANA', 'Kamil', 'Lycée', 'Oui', '2023-12-12', 'Aucune', 'Lycée', 'Lycée', 'Non', 'Aucune', 'Informatif', '2024-01-25', 'Mr Blavin'),
+(10, 'Mr Blavin', 'blabla@gmail.com', '2024-02-01', '2TSLAM', 'D202', '17:00:00', '19:00:00', 'Valider', 'NIKOLIC', 'Aleksandar', 'Lycée', 'Oui', '2023-12-25', 'Aucune', 'Lycée', 'Lycée', 'Non', 'Aucune', 'Informatif', '2024-01-25', 'Mr Blavin'),
+(11, 'Mr Blavin', 'blabla@gmail.com', '2024-02-05', '1SIOB', 'D202', '14:00:00', '16:00:00', 'Valider', 'NIKOLIC', 'Aleksandar', 'Lycée', 'Oui', '2023-12-25', 'Aucune', 'Lycée', 'Lycée', 'Non', 'Aucune', 'Informatif', '2024-02-01', 'Mr Blavin');
+
 -- --------------------------------------------------------
 
 --
@@ -283,13 +295,13 @@ CREATE TABLE `intervention` (
 -- (Voir ci-dessous la vue réelle)
 --
 CREATE TABLE `mesquestions` (
-`client` varchar(30)
-,`email` varchar(50)
-,`enonce` longtext
-,`idclient` int
+`idreponse` int
 ,`idquestion` int
-,`idreponse` int
+,`enonce` longtext
 ,`reponse` text
+,`idclient` int
+,`client` varchar(30)
+,`email` varchar(50)
 );
 
 -- --------------------------------------------------------
@@ -544,7 +556,7 @@ INSERT INTO `reponse` (`idreponse`, `idquestion`, `reponse`, `idclient`) VALUES
 
 CREATE TABLE `salle` (
   `idsalle` int NOT NULL,
-  `bâtiment` varchar(2) DEFAULT NULL,
+  `batiment` varchar(2) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `nom` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
@@ -602,26 +614,26 @@ DELIMITER ;
 -- (Voir ci-dessous la vue réelle)
 --
 CREATE TABLE `vclient` (
-`adresse` varchar(100)
-,`bloque` int
-,`connexion` varchar(21)
+`idclient` int
+,`nom` varchar(30)
+,`tel` varchar(10)
+,`email` varchar(50)
+,`mdp` varchar(255)
+,`adresse` varchar(100)
 ,`cp` varchar(5)
-,`date_creation_compte` varchar(21)
+,`ville` varchar(50)
+,`pays` varchar(50)
+,`etat` enum('Prospect','Client actif','Client très actif')
+,`role` enum('client','admin')
+,`nbTentatives` int
+,`bloque` int
+,`nbConnexion` int
+,`type` enum('Particulier','Professionnel')
 ,`date_creation_mdp` varchar(21)
 ,`date_dernier_changement_mdp` varchar(21)
+,`date_creation_compte` varchar(21)
+,`connexion` varchar(21)
 ,`deconnexion` varchar(21)
-,`email` varchar(50)
-,`etat` enum('Prospect','Client actif','Client très actif')
-,`idclient` int
-,`mdp` varchar(255)
-,`nbConnexion` int
-,`nbTentatives` int
-,`nom` varchar(30)
-,`pays` varchar(50)
-,`role` enum('client','admin')
-,`tel` varchar(10)
-,`type` enum('Particulier','Professionnel')
-,`ville` varchar(50)
 );
 
 -- --------------------------------------------------------
@@ -631,14 +643,14 @@ CREATE TABLE `vclient` (
 -- (Voir ci-dessous la vue réelle)
 --
 CREATE TABLE `vproduit` (
-`date_ajout` varchar(21)
-,`descriptionproduit` longtext
-,`idproduit` int
-,`imageproduit` varchar(255)
-,`libelle` varchar(50)
+`idproduit` int
 ,`nomproduit` varchar(100)
-,`prixproduit` decimal(6,2)
+,`imageproduit` varchar(255)
+,`descriptionproduit` longtext
 ,`qteproduit` int
+,`prixproduit` decimal(6,2)
+,`libelle` varchar(50)
+,`date_ajout` varchar(21)
 );
 
 -- --------------------------------------------------------
@@ -648,13 +660,13 @@ CREATE TABLE `vproduit` (
 -- (Voir ci-dessous la vue réelle)
 --
 CREATE TABLE `vstatsproduits` (
-`aide_a_la_conduite` double
-,`amplificateurs` double
+`nomproduit` varchar(100)
 ,`autoradio` double
 ,`gps` double
+,`aide_a_la_conduite` double
 ,`haut_parleurs` double
 ,`kit_mains_libre` double
-,`nomproduit` varchar(100)
+,`amplificateurs` double
 );
 
 -- --------------------------------------------------------
@@ -807,13 +819,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `idclient` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idclient` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `intervention`
 --
 ALTER TABLE `intervention`
-  MODIFY `idintervention` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idintervention` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `produit`
@@ -831,13 +843,13 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT pour la table `reponse`
 --
 ALTER TABLE `reponse`
-  MODIFY `idreponse` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idreponse` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
 ALTER TABLE `salle`
-  MODIFY `idsalle` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idsalle` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `type`
