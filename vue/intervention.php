@@ -11,6 +11,14 @@
     </div>
 </div>
 
+<div class="modal-footer justify-content-center">
+            <div class="d-flex">
+                <a href="intervention?action=ajouter" class="btn color-green btn-danger">
+                    Ajouter une Intervention
+                </a>
+            </div>
+        </div>
+
 <?php if (isset($erreur)) { ?>
 <div class="container mt-4">
 	<div class="row d-flex justify-content-center">
@@ -299,14 +307,8 @@
             </tbody>
         </table>
 
-        <div class="modal-footer justify-content-center">
-            <div class="d-flex">
-                <a href="intervention?action=ajouter" class="btn color-green btn-danger">
-                    Ajouter une Intervention
-                </a>
-            </div>
-        </div>
-        
+
+
 
 <script type="text/javascript">
     const selected = document.querySelector(".selected");

@@ -123,10 +123,6 @@
 					<p class="card-text">
 						<b>Date de création du compte :</b> <?= $unControleur->setDateTimeFormat($_SESSION['date_creation_compte']); ?>
 					</p>
-					<hr>
-					<p class="card-text">
-						<b>Adresse de livraison :</b> <?= $_SESSION['adresse']; ?>, <?= $_SESSION['cp']; ?> <?= $_SESSION['ville']; ?>
-					</p>
 				</div>
 				<div class="card-footer">
 					<div class="d-flex justify-content-center">
