@@ -4,7 +4,7 @@
 			<div class="card">
 				<div class="card-header">
 					<h3 class="text-center">
-						Dernière connexion : <?= $unControleur->setDateTimeFormat($_SESSION['connexion']); ?>
+						Dernière connexion le : <?= $unControleur->setDateTimeFormat($_SESSION['connexion']); ?>
 					</h3>
 				</div>
 			</div>
