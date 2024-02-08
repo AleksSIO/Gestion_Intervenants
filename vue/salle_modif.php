@@ -52,7 +52,7 @@
         <form method="post" action="salle">
                 <input type="hidden" name="idsalle" value="<?= $uneSalle['idsalle']; ?>">
                 <div class="mb-2">
-                    <p>Bâtiments : </p>
+                    <p>Bâtiment : </p>
                     <input type="text" name="batiment" class="form-control" value="<?= ($uneSalle != null ? $uneSalle['batiment'] : null); ?>">
                 </div>
                 <div class="mb-2">
@@ -75,7 +75,7 @@
         <form method="post" action="salle">
                 <input type="hidden" name="idsalle" value="">
                 <div class="mb-2">
-                    <p>Bâtiments : </p>
+                    <p>Bâtiment : </p>
                     <input type="text" name="batiment" class="form-control" value="">
                 </div>
                 <div class="mb-2">

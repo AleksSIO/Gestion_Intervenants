@@ -91,6 +91,10 @@ iframe {
     border: none !important;
 }
 
+.card-text {
+    text-align: center;
+}
+
 .txt1 {
     font-family: Poppins-Regular;
     font-size: 13px;

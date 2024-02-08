@@ -306,48 +306,7 @@
                 </a>
             </div>
         </div>
-						
-
-
-
-                            
-		<div class="d-flex justify-content-center mt-4 mb-5">
-            <div class="d-flex justify-content-center mt-4 mb-4">
-                <ul class="ul-pagination reveal-2">
-                    <?php if ($pageCourante <= 1) { ?>
-                    <li style="margin-top: 1vh;">
-                        <a href="javascript:void(0)" style="cursor: default;">Précédent</a>
-                    </li>
-                    <?php } else { ?>
-                    <li style="margin-top: 1vh;">
-                        <a href="intervention?p=<?= $pagePrecedente; ?>" class="text-primary">Précédent</a>
-                    </li>
-                    <?php } ?>
-                    <?php for ($i=1; $i<=$pagesTotales; $i++) { ?>
-                    <?php if ($i == $pageCourante) { ?>
-                    <li class="pageNumber active" style="margin-top: 1vh;">
-                        <a href="intervention?p=<?= $i; ?>"><?= $i; ?></a>
-                    </li>
-                    <?php } else { ?>
-                    <li class="pageNumber" style="margin-top: 1vh;">
-                        <a href="intervention?p=<?= $i; ?>"><?= $i; ?></a>
-                    </li>
-                    <?php } ?>
-                    <?php } ?>
-                    <?php if ($pageCourante >= $pagesTotales) { ?>
-                    <li style="margin-top: 1vh;">
-                        <a href="javascript:void(0)" style="margin-right: 1.7rem!important; cursor: default;">Suivant</a>
-                    </li>
-                    <?php } else { ?>
-                    <li style="margin-top: 1vh;">
-                        <a href="intervention?p=<?= $pageSuivante; ?>" class="text-primary" style="margin-right: 1.7rem!important;">Suivant</a>
-                    </li>
-                    <?php } ?>
-                </ul>
-            </div>
-            </nav>
-        </div>
-
+        
 
 <script type="text/javascript">
     const selected = document.querySelector(".selected");

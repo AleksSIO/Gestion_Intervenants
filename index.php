@@ -51,7 +51,7 @@ $unControleur = new Controleur($hostname, $database, $username, $password);
 <!-- MENU DE NAVIGATION -->
 <nav id="navbar">
     <div class="logo">
-        <img src="https://cdn-idf.opendigitaleducation.com/assets/themes/monlycee/img/illustrations/logo.png">
+        <img src="https://cdn-idf.opendigitaleducation.com/assets/themes/monlycee/img/illustrations/logo.png" alt="Logo monlycée.net">
     </div>
     <label for="btn" class="icon">
         <span class="fa fa-bars"></span>
@@ -185,25 +185,6 @@ switch ($page) {
 }
 
 ?>
-
-<!-- FOOTER -->
-<?php if (isset($_GET['page']) && $_GET['page'] == "inscription") { ?>
-<div class="footer-basic fixed-bottom" style="background-color: #171933;">
-<?php } else { ?>
-<div class="footer-basic" style="background-color: #171933;">
-<?php } ?>
-    <footer>
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a href="./index.php">Accueil</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="rgpd">RGPD</a>
-            </li>
-        </ul>
-    </footer>
-</div>
-<!-- / FOOTER -->
 
 <!-- FICHIERS JAVASCRIPT -->
 <script src="assets/js/popper.min.js"></script>
