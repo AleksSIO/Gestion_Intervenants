@@ -27,7 +27,7 @@ $unControleur->setTable("intervention");
 //Fonction pour récuperer l'ensemble des informations de la listes des salles
 $lesInterventions = $unControleur->selectAllInterventions($depart, $interventionsParPage);
 
-//Ce bloque est accessible une fois qu'on est authentifier et permet de gérer la fonctionnalités Ajouter, Modifier, Supprimer
+//Ce bloc est accessible une fois qu'on est authentifier et permet de gérer la fonctionnalités Ajouter, Modifier, Supprimer
 if (isset($_SESSION['idclient']))
 {
 	$uneIntervention = null;

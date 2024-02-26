@@ -4,12 +4,13 @@ require_once("controleur/controleur.class.php");
 $unControleur = new Controleur($hostname, $database, $username, $password);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <title>Gestion des intervenants</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="https://static.wixstatic.com/media/be4e46_99f4b18d5b0a4802959f8ea664f81878~mv2.png/v1/fill/w_103,h_71,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/be4e46_99f4b18d5b0a4802959f8ea664f81878~mv2.png" />
     <!-- FICHIERS CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-icons.css">
