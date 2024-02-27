@@ -11,6 +11,14 @@
     </div>
 </div>
 
+<div class="modal-footer justify-content-center">
+    <div class="d-flex">
+        <a href="intervention?action=ajouter" class="btn color-green btn-danger">
+            Ajouter une Intervention
+        </a>
+    </div>
+</div>
+
 <?php if (isset($erreur)) { ?>
 <div class="container mt-4">
 	<div class="row d-flex justify-content-center">
@@ -47,23 +55,6 @@
             <tr>
                 <th>
                     <p class="card-text">
-                        <b>Id Intervention </b>
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Responsable </b>
-                    </p>
-                </th>
-                <th>
-                    <p class="card-text">
-                        <b> E-mail  </b>
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
                         <b> Date de l'intervention  </b>
                     </p>
                 </th>
@@ -77,6 +68,18 @@
                 <th>
                     <p class="card-text">
                         <b> Heure de fin  </b>
+                    </p>
+                </th>
+
+                <th>
+                    <p class="card-text">
+                        <b> Responsable </b>
+                    </p>
+                </th>
+
+                <th>
+                    <p class="card-text">
+                        <b> E-mail  </b>
                     </p>
                 </th>
 
@@ -112,61 +115,13 @@
 
                 <th>
                     <p class="card-text">
-                        <b> Présentation au CA  </b>  
+                        <b> Présentation au CA  </b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Date de la présentation au CA  </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Précision à ajouter  </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Lieu où l'intervenant mange  </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Pris en charge financièrement par  </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Précision à ajouter  </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b>Précision à ajouter  </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b>Type d'intervention  </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b>Date de transmission  </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b>Responsable de formation  </b>  
+                        <b> Date de la présentation au CA  </b>
                     </p>
                 </th>
             </tr>
@@ -185,23 +140,6 @@
                     <tr>
                         <td>
                             <p class="card-text">
-                                <?= $uneIntervention['idintervention']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['responsable']; ?>
-                            </p>
-                        </td>
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['email']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
                                 <?= $date_intervention; ?>
                             </p>
                         </td>
@@ -215,6 +153,17 @@
                         <td>
                             <p class="card-text">
                                 <?= substr($uneIntervention['heure_fin'], 0, 5); ?>
+                            </p>
+                        </td>
+
+                        <td>
+                            <p class="card-text">
+                                <?= $uneIntervention['responsable']; ?>
+                            </p>
+                        </td>
+                        <td>
+                            <p class="card-text">
+                                <?= $uneIntervention['email']; ?>
                             </p>
                         </td>
 
@@ -250,7 +199,7 @@
 
                         <td>
                             <p class="card-text">
-                                <?= $uneIntervention['nom_salle']; ?>
+                                <?= $uneIntervention['presentation_ca']; ?>
                             </p>
                         </td>
 
@@ -260,53 +209,7 @@
                             </p>
                         </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['infos']; ?>
-                            </p>
-                        </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['lieu_repas']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['payeur']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['besoin_parking']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['infos2']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['type_intervention']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $date_transmission; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['responsable_form']; ?>
-                            </p>
-                        </td>
 
                         <td>
                             <a href="intervention?action=edit&idintervention=<?= $uneIntervention['idintervention']; ?>" class="btn btn-primary text-light me-2">
@@ -318,55 +221,6 @@
                 <?php } ?>
             </tbody>
         </table>
-
-        <div class="modal-footer justify-content-center">
-            <div class="d-flex">
-                <a href="intervention?action=ajouter" class="btn color-green btn-danger">
-                    Ajouter une Intervention
-                </a>
-            </div>
-        </div>
-						
-
-
-
-                            
-		<div class="d-flex justify-content-center mt-4 mb-5">
-            <div class="d-flex justify-content-center mt-4 mb-4">
-                <ul class="ul-pagination reveal-2">
-                    <?php if ($pageCourante <= 1) { ?>
-                    <li style="margin-top: 1vh;">
-                        <a href="javascript:void(0)" style="cursor: default;">Précédent</a>
-                    </li>
-                    <?php } else { ?>
-                    <li style="margin-top: 1vh;">
-                        <a href="intervention?p=<?= $pagePrecedente; ?>" class="text-primary">Précédent</a>
-                    </li>
-                    <?php } ?>
-                    <?php for ($i=1; $i<=$pagesTotales; $i++) { ?>
-                    <?php if ($i == $pageCourante) { ?>
-                    <li class="pageNumber active" style="margin-top: 1vh;">
-                        <a href="intervention?p=<?= $i; ?>"><?= $i; ?></a>
-                    </li>
-                    <?php } else { ?>
-                    <li class="pageNumber" style="margin-top: 1vh;">
-                        <a href="intervention?p=<?= $i; ?>"><?= $i; ?></a>
-                    </li>
-                    <?php } ?>
-                    <?php } ?>
-                    <?php if ($pageCourante >= $pagesTotales) { ?>
-                    <li style="margin-top: 1vh;">
-                        <a href="javascript:void(0)" style="margin-right: 1.7rem!important; cursor: default;">Suivant</a>
-                    </li>
-                    <?php } else { ?>
-                    <li style="margin-top: 1vh;">
-                        <a href="intervention?p=<?= $pageSuivante; ?>" class="text-primary" style="margin-right: 1.7rem!important;">Suivant</a>
-                    </li>
-                    <?php } ?>
-                </ul>
-            </div>
-            </nav>
-        </div>
 
 
 <script type="text/javascript">
