@@ -84,6 +84,12 @@
 
                 <th>
                     <p class="card-text">
+                        <b> Heure de fin : </b>
+                    </p>
+                </th>
+
+                <th>
+                    <p class="card-text">
                         <b> Classe ou groupe concerné : </b>  
                     </p>
                 </th>
@@ -212,6 +218,12 @@
 
                         <td>
                             <p class="card-text">
+                                <?= $uneIntervention['heure_fin']; ?>
+                            </p>
+                        </td>
+
+                        <td>
+                            <p class="card-text">
                                 <?= $uneIntervention['classe']; ?>
                             </p>
                         </td>
@@ -299,9 +311,6 @@
                                 <?= $uneIntervention['responsable_form']; ?>
                             </p>
                         </td>
-
-                        
-
                     </tr>
                 <?php } ?>
             </tbody>

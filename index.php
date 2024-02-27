@@ -11,6 +11,7 @@ $unControleur = new Controleur($hostname, $database, $username, $password);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="https://static.wixstatic.com/media/be4e46_99f4b18d5b0a4802959f8ea664f81878~mv2.png/v1/fill/w_103,h_71,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/be4e46_99f4b18d5b0a4802959f8ea664f81878~mv2.png" />
+    <link rel="icon" type="image/x-icon" href="https://static.wixstatic.com/media/be4e46_3439145e734046d2812deb69863bace6~mv2_d_6300_2710_s_4_2.png/v1/fill/w_550,h_236,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/be4e46_3439145e734046d2812deb69863bace6~mv2_d_6300_2710_s_4_2.png" />
     <!-- FICHIERS CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-icons.css">

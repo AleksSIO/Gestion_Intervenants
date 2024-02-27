@@ -102,7 +102,7 @@
 
                 <div class="form-group col-md-6">
    
-                    <label for="date_affichage" class="a1">Date choisie</label>
+                    <label for="date_affichage" class="a1">Date choisie :</label>
                     <input type="date" class="form-control" name ="date_affichage" value="<?= $currentDateTime ?>" id="date_affichage" onchange="submitForm();" required>
 
                 </div>
