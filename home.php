@@ -63,7 +63,7 @@ h1{
 <div class="container mt-4">
 	<div class="row d-flex justify-content-center">
 		<div class="col-auto">
-			<div class="card" style="background: linear-gradient(to bottom right, #4bafd5, #2a9cc8);">
+			<div class="card" style="background: linear-gradient(to bottom right, #00b8ff, #007bff);">
 				<div class="card-header">
 					<div class="grid">
   						<p class="stroke-shadow">Animation - intervenants Externes</p>
@@ -75,7 +75,7 @@ h1{
 </div>
 
 <div class="container reveal mt-4 mb-5">
-	<div class="row align-items-center" style="background-color: #E0FFFF; border-radius:.25rem;">
+	<div class="row align-items-center" style="background-color: #00b8ffb3; border-radius:.25rem;">
 		<div class="col-lg-5 mx-auto">
 			<br>
 			<h1 class="reveal-1" style="margin-bottom: 1.5rem!important;">
