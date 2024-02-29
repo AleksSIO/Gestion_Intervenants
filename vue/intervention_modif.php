@@ -47,14 +47,14 @@
                     <div class="form-group col-md-6">
 
                         <label for="responsable" class="a1">Responsable</label>
-                        <input type="text" class="form-control" name="responsable" value="<?= ($uneIntervention != null ? $uneIntervention['responsable'] : null); ?>" id="responsable" placeholder="Mr Blavin" required>
+                        <input type="text" class="form-control" name="responsable" value="<?= ($uneIntervention != null ? $uneIntervention['responsable'] : null); ?>" id="responsable" placeholder="Nom et prénom" required>
 
                     </div>
 
                     <div class="form-group col-md-6">
 
                         <label for="email" class="a1">Email</label>
-                        <input type="email" class="form-control" name="email" value="<?= ($uneIntervention != null ? $uneIntervention['email'] : null); ?>" id="email" placeholder="Email" required>
+                        <input type="email" class="form-control" name="email" value="<?= ($uneIntervention != null ? $uneIntervention['email'] : null); ?>" id="email" required>
 
                     </div>
 
@@ -81,7 +81,7 @@
 
                     <div class="form-group col-md-6">
 
-                        <label for="classe" class="a1">Classe ou groupe concerné</label>
+                        <label for="classe" class="a1">Classe(s) ou groupe(s) concerné(e)(s)</label>
                         <input type="text" class="form-control" name="classe" value="<?= ($uneIntervention != null ? $uneIntervention['classe'] : null); ?>" id="classe" placeholder="1TSIOA" required>
 
                     </div>
@@ -89,7 +89,7 @@
                     <div class="form-group col-md-6">
 
                         <label for="nom_salle" class="a1">Salle</label>
-                        <input type="text" class="form-control" name="nom_salle" value="<?= ($uneIntervention != null ? $uneIntervention['nom_salle'] : null); ?>" id="nom_salle" placeholder="batiment a/D202" required>
+                        <input type="text" class="form-control" name="nom_salle" value="<?= ($uneIntervention != null ? $uneIntervention['nom_salle'] : null); ?>" id="nom_salle" placeholder="batiment + salle" required>
 
                     </div>
 
@@ -99,13 +99,13 @@
                 <br>
 
 
-                <h2>Intervenants</h2>
+                <h2>Intervenant(s)</h2>
 
                 <div class="form-row" id="b">
 
                     <div class="form-group col-md-6">
 
-                        <label for="nom_inter">Nom(s)</label>
+                        <label for="nom_inter">Nom</label>
                         <input type="text" class="form-control" name="nom_inter" value="<?= ($uneIntervention != null ? $uneIntervention['nom_inter'] : null); ?>" id="nom" required>
 
                     </div>
@@ -123,26 +123,25 @@
                         <input type="text" class="form-control" name="organisme" value="<?= ($uneIntervention != null ? $uneIntervention['organisme'] : null); ?>" id="organisme" required>
 
                     </div>
-
                 </div>
 
                 <br>
                 <br>
 
-                <h2>Inscription dans un projet - Nature et cout de l'intervention</h2>
+                <h2>Inscription dans un projet - Nature et coût de l'intervention</h2>
 
                 <div class="form-row" id="c">
 
                     <div class="form-group col-md-12">
 
                         <label for="presentation_ca">Le projet a-t-il été présenté au C.A ?</label>
-                        <input type="text" class="form-control" name="presentation_ca" value="<?= ($uneIntervention != null ? $uneIntervention['presentation_ca'] : null); ?>" id="presentation_ca" placeholder ="oui/non"required>
+                        <input type="text" class="form-control" name="presentation_ca" value="<?= ($uneIntervention != null ? $uneIntervention['presentation_ca'] : null); ?>" id="presentation_ca" placeholder ="Oui/Non"required>
 
                     </div>
 
                     <div class="form-group col-md-6">
 
-                        <label for="date_presentation">Si oui, quelle date</label>
+                        <label for="date_presentation">Si oui, quelle date ?</label>
                         <input type="date" class="form-control" name="date_presentation" value="<?= ($uneIntervention != null ? $uneIntervention['date_presentation'] : null); ?>" id="date_presentation">
 
                     </div>
@@ -150,10 +149,9 @@
                     <div class="form-group col-md-6">
 
                         <label for="infos">Précision à ajouter</label>
-                        <input type="text" class="form-control" name="infos" value="<?= ($uneIntervention != null ? $uneIntervention['infos'] : null); ?>" id="infos">
+                        <input type="text" class="form-control" name="infos" value="<?= ($uneIntervention != null ? $uneIntervention['infos'] : null); ?>" id="infos" placeholder='"Aucune" si pas de précision'>
 
                     </div>
-
                 </div>
 
 
@@ -183,16 +181,15 @@
 
                     <div class="col-md-6">
                         <label for="besoin_parking">besoin de parking</label>
-                        <input type="text" class="form-control" name="besoin_parking" value="<?= ($uneIntervention != null ? $uneIntervention['besoin_parking'] : null); ?>" id="besoin_parking">
+                        <input type="text" class="form-control" name="besoin_parking" value="<?= ($uneIntervention != null ? $uneIntervention['besoin_parking'] : null); ?>" id="besoin_parking" placeholder="Oui/Non">
                     </div>
 
                     <div class="form-group col-md-12">
 
                         <label for="infos2">Précision à ajouter</label>
-                        <input type="text" class="form-control" name="infos2" value="<?= ($uneIntervention != null ? $uneIntervention['infos2'] : null); ?>" id="infos2">
+                        <input type="text" name="infos2" value="<?= ($uneIntervention != null ? $uneIntervention['infos2'] : null); ?>" id="infos2" placeholdeur='"Aucune" si pas de précision'>
 
                     </div>
-
                 </div>
 
                 <br>
@@ -238,16 +235,15 @@
                             Refuser
                     </button>
                 </div>
-                
-
             </form>
 
-        <?php } else { ?>
+        <?php } else { ?> <!-- Ajout intervention -->
 
             <form method ="post" action ="intervention">
 
 
                 <h2>Informations</h2>
+                <p style="font-size: smaller;">Tous les champs marqués d'un * sont requis !</p>
                 <div class="form-row" id="a">
 
                     <input type="hidden" name="etat" value="">
@@ -257,7 +253,7 @@
                     <div class="form-group col-md-6">
 
                         <label for="responsable" class="a1">Responsable</label>
-                        <input type="text" class="form-control" name="responsable" value="" id="res" placeholder="Mr Blavin" required>
+                        <input type="text" class="form-control" name="responsable" value="" id="res" placeholder="Nom et prénom" required>
 
                     </div>
 

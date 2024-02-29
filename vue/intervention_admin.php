@@ -51,7 +51,7 @@
                                 
        <!-- <table border = 1 width="100%" height="100%"> -->
 
-<div class="container mt-4 table-responsive">
+<div class="container mt-4 table-responsive table-container1">
     <table class="table table-bordered">
         <thead class="table-primary" style='text-align: center;'>
             <tr>
@@ -201,6 +201,7 @@
         </tbody>
     </table>
 </div>
+<hr>
 
 
 <script type="text/javascript">
