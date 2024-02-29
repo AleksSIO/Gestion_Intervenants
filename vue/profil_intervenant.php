@@ -24,10 +24,10 @@
     <body>
 
         <header>
-        <br>
-        <h1>Animation - Intervenants Exterieurs</h1>
-        <br>
-        <br>
+            <br>
+            <h1>Animation - Intervenants Exterieurs</h1>
+            <br>
+            <br>
         </header>
 
         <?php if (isset($_SESSION['idclient'])){?>

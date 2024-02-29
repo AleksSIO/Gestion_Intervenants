@@ -51,7 +51,7 @@
                                 
        <!-- <table border = 1 width="100%" height="100%"> -->
 
-<div class="container mt-4">
+<div class="container mt-4 table-responsive">
     <table class="table table-bordered">
         <thead class="table-primary" style='text-align: center;'>
             <tr>
@@ -192,7 +192,7 @@
                     </td>
 
                     <td>
-                        <a href="#" class="btn btn-info text-light me-2"> 
+                        <a href="intervention?action=show&idintervention=<?= $uneIntervention['idintervention']; ?>" class="btn btn-info text-light me-2 detailsInterv"> 
                             Détails de l'intevention
                         </a>
                     </td>

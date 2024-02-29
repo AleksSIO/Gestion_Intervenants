@@ -48,7 +48,7 @@ $unControleur = new Controleur($hostname, $database, $username, $password);
     <!-- / FICHIERS CSS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
 </head>
-<body style="background-image: url(assets/images/bg.jpg); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+<body style="background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 
 <!-- MENU DE NAVIGATION -->
 <nav id="navbar">
@@ -69,7 +69,7 @@ $unControleur = new Controleur($hostname, $database, $username, $password);
         <li><a href="salle" style="color: #00FFFF;">Salle</a></li>
         <li><a href="intervention" style="color: #00FFFF;">Intervention</a></li>
         <li><a href="profil" style="color: #00FFFF;">Profil</a></li>
-        <li><a href="deconnexion" style="color: #FF0000;"><i class="bi bi-power fs-5"></i></a></li>
+        <li><a href="deconnexion" style="color: #FF0000;" title="Déconnexion"><i class="bi bi-power fs-5"></i></a></li>
     <?php } ?>
     </ul>
 </nav>
@@ -85,9 +85,6 @@ if (isset($_GET['page'])) {
 switch ($page) {
     case "home" :
         require_once("home.php");
-        break;
-    case "rgpd" :
-        require_once("vue/rgpd.php");
         break;
     case "connexion" :
         if (!isset($_SESSION['idclient'])) {
