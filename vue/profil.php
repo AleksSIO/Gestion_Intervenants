@@ -1,3 +1,17 @@
+<style>
+	::-webkit-scrollbar {
+		width: 8px;
+		background-color: #f1f1f1; 
+	}
+	::-webkit-scrollbar-track {
+		background-color: #ccc;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: #0d6efd;
+		border-radius: 10px;
+	}
+</style>
+
 <div class="container mt-4">
 	<div class="row d-flex justify-content-center">
 		<div class="col-auto">

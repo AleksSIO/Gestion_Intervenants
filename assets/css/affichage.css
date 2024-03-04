@@ -18,14 +18,14 @@ th{
     vertical-align: auto;
     font-size: 14px ;
     border-collapse: separate;
-    border: 3px solid #2a9cc8 ;
+    border: 3px solid #00b8ff ;
     border-radius:10px;
     align-items: center;
 }
 td{
     vertical-align: auto;
     font-size: 14px ;
-    border: 3px solid #2a9cc8 ;
+    border: 3px solid #00b8ff ;
     border-radius:10px;
     justify-items: center;
 }

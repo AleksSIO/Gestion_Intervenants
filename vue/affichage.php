@@ -70,12 +70,24 @@
             }
 
             .intervention-cell-color {
-                background-color: #0d6efd;
+                background-color: #00b8ff;
                 border-radius: 0;
             }
 
             .empty-cell {
                 padding: 10px;
+            }
+
+            ::-webkit-scrollbar {
+                width: 8px;
+                background-color: #f1f1f1; 
+            }
+            ::-webkit-scrollbar-track {
+                background-color: #ccc;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: #0d6efd;
+                border-radius: 10px;
             }
         </style>
     </head>
@@ -90,7 +102,7 @@
             <table border="1" width="100%" height="100%">
                 <thead>
                     <tr>
-                        <th colspan="13" style='text-align: center;'>Date du jour : <span id="date"></span></th>
+                        <th colspan="13" style='text-align: center;'>Intervention(s) du <span id="date"></span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -113,7 +125,7 @@
                 <form method ="post" action ="profil_intervenant">
 
                     <tr>
-                        <th style='text-align: center;'>Interventions</th>
+                        <th style='text-align: center;'>Intervention(s)</th>
                         <?php for ($i = 8; $i < 20; $i++){
                                     echo "<td style='text-align: center;'>$i h</td>";
                         } ?>
@@ -133,7 +145,8 @@
                                 echo "<tr>";
                                 echo "<td style='width: 370px;'>";
                                 echo "<input type='hidden' name='idintervention' value='".$uneIntervention['idintervention'].".'>";
-                                echo "<button type='submit' name='Modifier' class='btn btn-primary' style='border-radius: 0;'>Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." de ".$heure_debut." à ".$heure_fin."</button>";
+                                echo "<button type='submit' name='Modifier' class='btn btn-primary' style='border-radius: 0;   width: 100%; height: 100%;' title='Plus de détails  width: 100%;
+                                height: 100%;' >Intervention de ".$uneIntervention['nom_inter']." ".$uneIntervention['prenom_inter']."<br> pour ".$uneIntervention['responsable']." le ".$uneIntervention['date_intervention']." de ".$heure_debut." à ".$heure_fin."</button>";
                                 echo "</td>";
                                 for ($i = 8; $i < 20; $i++){
                                     $cellClass = ($i >= (int)$heure_debut && $i < (int)$heure_fin) ? 'intervention-cell intervention-cell-color' : 'intervention-cell';

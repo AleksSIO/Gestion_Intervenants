@@ -19,6 +19,20 @@
         <link rel="stylesheet" href="assets/css/styleform.css">
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <style>
+            ::-webkit-scrollbar {
+                width: 8px;
+                background-color: #f1f1f1; 
+            }
+            ::-webkit-scrollbar-track {
+                background-color: #ccc;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: #0d6efd;
+                border-radius: 10px;
+            }
+        </style>
     </head>
 
     <body>
@@ -185,7 +199,7 @@
                     <div class="form-group col-md-12">
 
                         <label for="infos2">Précision à ajouter</label>
-                        <input type="text" name="infos2" value="<?= ($uneIntervention != null ? $uneIntervention['infos2'] : null); ?>" id="infos2" placeholdeur='"Aucune" si pas de précision'>
+                        <input type="text" name="infos2" value="<?= ($uneIntervention != null ? $uneIntervention['infos2'] : null); ?>" id="infos2" placeholder='"Aucune" si pas de précision'>
 
                     </div>
                 </div>
@@ -234,12 +248,15 @@
                     </button>
                 </div>
             </form>
+            <a href="#" class="back-to-top"><i class="bi bi-arrow-up-square"></i></a>
 
         <?php } else { ?> <!-- Ajout intervention -->
 
             <form method ="post" action ="intervention">
 
                 <div class="container mt-4 table-responsive">
+                    <h2 style="color: red">Ajout d'une intervention</h2>
+                    <br>
                     <h2>Informations</h2>
                     <p style="font-size: smaller;">Tous les champs marqués d'un <span style="color: red;">*</span> sont requis !</p>
                     <div class="form-row" id="a">
@@ -301,7 +318,7 @@
                     <br>
 
 
-                    <h2>Intervenants</h2>
+                    <h2>Intervenant(s)</h2>
 
                     <div class="form-row" id="b">
 
@@ -335,10 +352,10 @@
 
                     <div class="form-row" id="c">
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
 
                             <label for="presentation_ca" class="a1">Le projet a-t-il été présenté au C.A ?</label><span style="color: red;" title="Requis"><b>*</b></span>
-                            <input type="text" class="form-control" name="presentation_ca" id="presentation_ca" placeholder ="oui/non"required>
+                            <input type="text" class="form-control" name="presentation_ca" id="presentation_ca" placeholder ="Oui/Non"required>
 
                         </div>
 
@@ -349,10 +366,10 @@
 
                         </div>
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
 
                             <label for="infos" class="a1">Précision à ajouter </label>
-                            <input type="text" class="form-control" name="infos" id="infos">
+                            <input type="text" class="form-control" name="infos" id="infos" placeholder='"Aucune" si rien à ajouter'>
 
                         </div>
 
@@ -383,13 +400,13 @@
 
                         <div class="col-md-6">
                             <label for="besoin_parking" class="a1">besoin de parking</label><span style="color: red;" title="Requis"><b>*</b></span>
-                            <input type="text" class="form-control" name="besoin_parking" id="besoin_parking">
+                            <input type="text" class="form-control" name="besoin_parking" id="besoin_parking" placeholder="Oui/Non">
                         </div>
 
                         <div class="form-group col-md-12">
 
                             <label for="infos2" class="a1">Précision à ajouter</label>
-                            <input type="text" class="form-control" name="infos2" id="infos2">
+                            <input type="text" class="form-control" name="infos2" id="infos2" placeholder='"Aucune" si rien à ajouter'>
 
                         </div>
 
@@ -434,4 +451,24 @@
                 </div>
             </form>
 
+            <a href="#" class="back-to-top"><img src="https://cdn-icons-png.flaticon.com/512/25/25366.png" alt="icône retour haut de page"></i></a>
+
         <?php } ?>
+
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+            document.querySelector('.back-to-top').classList.add('show');
+        } else {
+            document.querySelector('.back-to-top').classList.remove('show');
+        }
+    }
+
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.scrollTop = 0; // Pour les anciens navigateurs
+        document.documentElement.scrollTop = 0; // Pour les navigateurs modernes
+    });
+</script>
