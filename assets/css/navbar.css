@@ -120,7 +120,6 @@
     }
     #navbar ul li,
     #navbar ul ul li {
-        background: linear-gradient(to bottom right, #4bafd5, #2a9cc8);
         display: block;
         width: 100%;
     }

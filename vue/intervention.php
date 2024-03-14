@@ -48,274 +48,158 @@
 	</div>
 </div>
 <?php } ?>	
-                                
-        <table border = 1 width="100%" height="100%">
 
-        <thead>
+<div class="container mt-4 table-responsive table-container1">
+    <table class="table table-bordered">
+        <thead class="table-primary" style='text-align: center;'>
             <tr>
                 <th>
                     <p class="card-text">
-                        <b>Id Intervention : </b>
+                        <b> Date de l'intervention  </b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Responsable : </b>
-                    </p>
-                </th>
-                <th>
-                    <p class="card-text">
-                        <b> E-mail : </b>
+                        <b> Heure de début  </b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Date de l'intervention : </b>
+                        <b> Heure de fin  </b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Heure de début : </b>
+                        <b> Responsable </b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Heure de fin : </b>
+                        <b> Classe ou groupe concerné  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Classe ou groupe concerné : </b>  
+                        <b> Nom de la salle  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Nom de la salle : </b>  
+                        <b> Nom de l'intervenant  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Nom de l'intervenant : </b>  
+                        <b>Prénom de l'intervenant  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b>Prénom de l'intervenant : </b>  
+                        <b> Organisme  </b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Organisme : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Présentation au CA : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Date de la présentation au CA : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Précision à ajouter : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Lieu où l'intervenant mange : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Pris en charge financièrement par : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b> Précision à ajouter : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b>Précision à ajouter : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b>Type d'intervention : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b>Date de transmission : </b>  
-                    </p>
-                </th>
-
-                <th>
-                    <p class="card-text">
-                        <b>Responsable de formation : </b>  
+                        <b> Date de la présentation au CA  </b>
                     </p>
                 </th>
             </tr>
         </thead>
-
         <tbody>
 
-            </tbody>
+            <?php foreach ($lesInterventions as $uneIntervention) { 
+                $date_intervention = date('d/m/Y', strtotime($uneIntervention['date_intervention']));
+                $date_presentation = date('d/m/Y', strtotime($uneIntervention['date_presentation']));
+                $date_transmission = date('d/m/Y', strtotime($uneIntervention['date_transmission']));
+                ?>	
+                
+                <tr>
+                    <td>
+                        <p class="card-text">
+                            <?= $date_intervention; ?>
+                        </p>
+                    </td>
 
-                <?php foreach ($lesInterventions as $uneIntervention) { ?>	
+                    <td>
+                        <p class="card-text">
+                            <?= substr($uneIntervention['heure_debut'], 0, 5); ?>
+                        </p>
+                    </td>
 
-                    <tr>
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['idintervention']; ?>
-                            </p>
-                        </td>
+                    <td>
+                        <p class="card-text">
+                            <?= substr($uneIntervention['heure_fin'], 0, 5); ?>
+                        </p>
+                    </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['responsable']; ?>
-                            </p>
-                        </td>
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['email']; ?>
-                            </p>
-                        </td>
+                    <td>
+                        <p class="card-text">
+                            <?= $uneIntervention['responsable']; ?>
+                        </p>
+                    </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['date_intervention']; ?>
-                            </p>
-                        </td>
+                    <td>
+                        <p class="card-text">
+                            <?= $uneIntervention['classe']; ?>
+                        </p>
+                    </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['heure_debut']; ?>
-                            </p>
-                        </td>
+                    <td>
+                        <p class="card-text">
+                            <?= $uneIntervention['nom_salle']; ?>
+                        </p>
+                    </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['heure_fin']; ?>
-                            </p>
-                        </td>
+                    <td>
+                        <p class="card-text">
+                            <?= $uneIntervention['nom_inter']; ?>
+                        </p>
+                    </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['classe']; ?>
-                            </p>
-                        </td>
+                    <td>
+                        <p class="card-text">
+                            <?= $uneIntervention['prenom_inter']; ?>
+                        </p>
+                    </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['nom_salle']; ?>
-                            </p>
-                        </td>
+                    <td>
+                        <p class="card-text">
+                            <?= $uneIntervention['organisme']; ?>
+                        </p>
+                    </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['nom_inter']; ?>
-                            </p>
-                        </td>
+                    <td>
+                        <p class="card-text">
+                            <?= $date_presentation; ?>
+                        </p>
+                    </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['prenom_inter']; ?>
-                            </p>
-                        </td>
+                    <td>
+                        <a href="intervention?action=edit&idintervention=<?= $uneIntervention['idintervention']; ?>" class="btn btn-primary text-light me-2">
+                            Modifier l'état de l'intervention
+                        </a>
+                    </td>
 
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['organisme']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['nom_salle']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['date_presentation']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['infos']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['lieu_repas']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['payeur']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['besoin_parking']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['infos2']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['type_intervention']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['date_transmission']; ?>
-                            </p>
-                        </td>
-
-                        <td>
-                            <p class="card-text">
-                                <?= $uneIntervention['responsable_form']; ?>
-                            </p>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-
+                    <td>
+                        <a href="intervention?action=show&idintervention=<?= $uneIntervention['idintervention']; ?>" class="btn btn-info text-light me-2 detailsInterv"> 
+                            Détails de l'intevention
+                        </a>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
+<hr>
 
 
 
