@@ -173,7 +173,7 @@
                     <br>
 
                     <h2>Intendance </h2>
-                    <h5>Repas midi</h5><p><!-- !!! --></p>
+                    <h5>Repas midi</h5><p><span style=""></span></p>
 
                     <div class="form-row" id="d">
 

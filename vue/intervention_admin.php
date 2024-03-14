@@ -47,9 +47,7 @@
 		</div>
 	</div>
 </div>
-<?php } ?>	
-                                
-       <!-- <table border = 1 width="100%" height="100%"> -->
+<?php } ?>
 
 <div class="container mt-4 table-responsive table-container1">
     <table class="table table-bordered">
@@ -57,61 +55,61 @@
             <tr>
                 <th>
                     <p class="card-text">
-                        <b> Date de l'intervention  </b>
+                        <b> Date de l'intervention</b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Heure de début  </b>
+                        <b> Heure de début</b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Heure de fin  </b>
+                        <b> Heure de fin</b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Responsable </b>
+                        <b> Responsable</b>
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Classe ou groupe concerné  </b>  
+                        <b> Classe ou groupe concerné</b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Nom de la salle  </b>  
+                        <b> Nom de la salle</b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Nom de l'intervenant  </b>  
+                        <b> Nom de l'intervenant</b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b>Prénom de l'intervenant  </b>  
+                        <b>Prénom de l'intervenant</b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Organisme  </b>  
+                        <b> Organisme</b>  
                     </p>
                 </th>
 
                 <th>
                     <p class="card-text">
-                        <b> Date de la présentation au CA  </b>
+                        <b> Date de la présentation au CA</b>
                     </p>
                 </th>
             </tr>
